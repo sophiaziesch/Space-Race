@@ -4,6 +4,7 @@ window.addEventListener("load", () => {
 	let game;
 	const audioButton = document.getElementById("audio-button");
 	const audioElement = new Audio("../audio/space-dance.wav");
+	audioElement.loop = true;
 
 	function startGame() {
 		console.log("start game");

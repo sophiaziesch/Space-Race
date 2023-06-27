@@ -29,4 +29,8 @@ class Obstacle {
 		this.element.style.top = `${this.top}px`;
 		this.element.style.left = `${this.left}px`;
 	}
+
+	setSpeed(speed) {
+		this.speed = speed;
+	}
 }

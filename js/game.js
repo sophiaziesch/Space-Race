@@ -11,7 +11,7 @@ class Game {
 		this.isGameOver = false;
 		this.score = 0;
 		this.lives = 3;
-		this.level = 1;
+		this.level = 0;
 		this.animateId;
 	}
 
@@ -37,6 +37,10 @@ class Game {
 		} else {
 			this.animateId = requestAnimationFrame(() => this.gameLoop());
 		}
+
+		if (this.score > 0 && this.score % 5 === 0) {
+			this.increaseLevel();
+		}
 	}
 
 	update() {
@@ -61,6 +65,24 @@ class Game {
 		if (this.lives <= 0) {
 			this.isGameOver = true;
 		}
+	}
+
+	increaseLevel() {
+		this.level += 1;
+		const obstacleSpeed = 3 + this.level * 0.5;
+		const obstacleFrequency = this.level * 0.1;
+
+		this.obstacles.forEach((obstacle) => {
+			obstacle.setSpeed(obstacleSpeed);
+		});
+
+		clearInterval(this.obstacleInterval);
+		this.obstacleInterval = setInterval(() => {
+			this.obstacles.push(new Obstacle(this.gameScreen));
+		}, obstacleFrequency);
+
+		// Display the updated level
+		document.getElementById("level").innerText = this.level;
 	}
 
 	endGame() {
