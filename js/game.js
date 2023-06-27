@@ -13,6 +13,8 @@ class Game {
 		this.lives = 3;
 		this.level = 0;
 		this.animateId;
+		this.obstacleFrequency = 200;
+		this.obstacleSpeed = 3;
 	}
 
 	start() {
@@ -28,18 +30,14 @@ class Game {
 
 	gameLoop() {
 		this.update();
-		console.log(this.animateId);
-		if (this.animateId % 200 === 0) {
-			this.obstacles.push(new Obstacle(this.gameScreen));
+		console.log(this.level);
+		if (this.animateId % this.obstacleFrequency === 0) {
+			this.obstacles.push(new Obstacle(this.gameScreen, this.obstacleSpeed));
 		}
 		if (this.isGameOver) {
 			this.endGame();
 		} else {
 			this.animateId = requestAnimationFrame(() => this.gameLoop());
-		}
-
-		if (this.score > 0 && this.score % 5 === 0) {
-			this.increaseLevel();
 		}
 	}
 
@@ -53,6 +51,9 @@ class Game {
 				this.lives -= 1;
 			} else if (obstacle.top > this.gameScreen.offsetHeight) {
 				this.score += 1;
+				if (this.score > 0 && this.score % 5 === 0) {
+					this.increaseLevel();
+				}
 			} else {
 				obstaclesToKeep.push(obstacle);
 			}
@@ -69,17 +70,17 @@ class Game {
 
 	increaseLevel() {
 		this.level += 1;
-		const obstacleSpeed = 3 + this.level * 0.5;
-		const obstacleFrequency = this.level * 0.1;
+		this.obstacleSpeed += 3;
+		this.obstacleFrequency -= 100;
 
 		this.obstacles.forEach((obstacle) => {
-			obstacle.setSpeed(obstacleSpeed);
+			obstacle.setSpeed(this.obstacleSpeed);
 		});
 
-		clearInterval(this.obstacleInterval);
+		/* clearInterval(this.obstacleInterval);
 		this.obstacleInterval = setInterval(() => {
 			this.obstacles.push(new Obstacle(this.gameScreen));
-		}, obstacleFrequency);
+		}, obstacleFrequency); */
 
 		// Display the updated level
 		document.getElementById("level").innerText = this.level;

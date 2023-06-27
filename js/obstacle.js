@@ -1,10 +1,11 @@
 class Obstacle {
-	constructor(gameScreen) {
+	constructor(gameScreen, speed) {
 		this.gameScreen = gameScreen;
 		this.left = Math.floor(Math.random() * 300 + 70);
 		this.top = -150;
 		this.width = 80;
 		this.height = 150;
+		this.speed = speed;
 		this.element = document.createElement("img");
 
 		this.element.src = "./img/comet.png";
@@ -20,7 +21,7 @@ class Obstacle {
 	}
 
 	move() {
-		this.top += 3;
+		this.top += this.speed;
 
 		this.updatePosition();
 	}
