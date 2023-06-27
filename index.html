@@ -3,7 +3,7 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="stylesheet" type="text/css" href="./css/style.css" />
-		<title>Document</title>
+		<title>Space Race</title>
 	</head>
 	<body>
 		<main>
@@ -17,7 +17,11 @@
 
 					<img src="./img/planet.jpeg" alt="blue planet" class="planet-small" />
 				</div>
-				<button id="start-button">Start</button>
+				<div class="buttons">
+					<button id="start-button">Start</button>
+					<br />
+					<button id="audio-button">Sound Off</button>
+				</div>
 				<p>Use the left and right key to dodge the obstacles!</p>
 			</div>
 
@@ -34,6 +38,7 @@
 						<p>Level: <span id="leve">1</span></p>
 						<p>Lives: <span id="lives">3</span></p>
 						<p>Score: <span id="score">0</span></p>
+						<button id="audio-button">Sound On</button>
 					</div>
 				</div>
 			</div>
@@ -50,6 +55,8 @@
 				</div>
 				<br />
 				<button id="restart-button">Restart</button>
+				<br />
+				<button id="audio-button">Sound On</button>
 			</div>
 		</main>
 		<script type="text/javascript" src="./js/game.js"></script>

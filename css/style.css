@@ -184,14 +184,26 @@ h1 {
 	font-size: 4rem;
 	letter-spacing: -0.5rem;
 	padding: 20px 110px;
+	margin: 20px;
+}
+
+#audio-button {
+	background-color: #66ffd1;
+	color: white;
+	border: none;
+	border-radius: 1rem;
+	font-size: 1.5rem;
+	letter-spacing: -0.2rem;
+	padding: 20px 50px;
 }
 
 #game-intro p,
 #game-end p {
-	padding: 50px 20px;
+	padding: 100px 20px;
 	width: 80vw;
 	margin: 0 auto;
-	line-height: 2rem;
+	font-size: 1.5rem;
+	line-height: 2.5rem;
 	align-self: center;
 }
 

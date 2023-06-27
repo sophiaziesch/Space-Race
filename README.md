@@ -1,6 +1,6 @@
 # Space Race
 
-[Click here to play the deployed game](#)
+[Click here to play the deployed game](#https://sophiaziesch.github.io/Space-Race/)
 
 ## Description
 

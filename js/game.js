@@ -54,6 +54,8 @@ class Game {
 			}
 		});
 
+		document.getElementById("score").innerText = this.score;
+		document.getElementById("lives").innerText = this.lives;
 		this.obstacles = obstaclesToKeep;
 
 		if (this.lives <= 0) {
