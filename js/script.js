@@ -4,32 +4,47 @@ window.addEventListener("load", () => {
 	let game;
 
 	function startGame() {
+		console.log("start game");
 		game = new Game();
 		game.start();
 		document.addEventListener("keydown", (event) => {
 			const key = event.key;
-			const possibleKeys = ["ArrowLeft", "ArrowRight", "ArrowUp", "ArrowDown"];
-			if (possibleKeys.includes(key)) {
+			const possibleKeystrokes = [
+				"ArrowLeft",
+				"ArrowUp",
+				"ArrowRight",
+				"ArrowDown",
+			];
+			if (possibleKeystrokes.includes(key)) {
+				// Update player's directionX and directionY based on the key pressed
 				switch (key) {
 					case "ArrowLeft":
-						game.player.directionX = -1;
-						break;
-					case "ArrowRight":
-						game.player.directionX = 1;
+						game.player.directionX = -3;
 						break;
 					case "ArrowUp":
-						game.player.directionY = -1;
+						game.player.directionY = -3;
+						break;
+					case "ArrowRight":
+						game.player.directionX = 3;
 						break;
 					case "ArrowDown":
-						game.player.directionY = 1;
+						game.player.directionY = 3;
 						break;
 				}
+				console.log(game.player.directionX, game.player.directionY);
 			}
 		});
 		document.addEventListener("keyup", (event) => {
 			const key = event.key;
-			const possibleKeys = ["ArrowLeft", "ArrowRight", "ArrowUp", "ArrowDown"];
-			if (possibleKeys.includes(key)) {
+			const possibleKeystrokes = [
+				"ArrowLeft",
+				"ArrowUp",
+				"ArrowRight",
+				"ArrowDown",
+			];
+
+			if (possibleKeystrokes.includes(key)) {
+				// Update player's directionX and directionY based on the key pressed
 				switch (key) {
 					case "ArrowLeft":
 					case "ArrowRight":

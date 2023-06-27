@@ -175,7 +175,8 @@ h1 {
 	width: 160px;
 }
 
-#start-button {
+#start-button,
+#restart-button {
 	background-color: #a276ff;
 	color: white;
 	border: none;

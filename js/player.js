@@ -1,15 +1,15 @@
 class Player {
 	constructor(gameScreen) {
 		this.gameScreen = gameScreen;
-		this.width = 50;
-		this.height = 100;
-		this.top = 750;
-		this.left = 500;
+		this.width = 150;
+		this.height = 150;
+		this.top = 480;
+		this.left = 180;
 		this.directionX = 0;
 		this.directionY = 0;
 		this.element = document.createElement("img");
 
-		this.element.src = "../img/ufo-1.png";
+		this.element.src = "../img/ufo.png";
 		this.element.style.position = "absolute";
 
 		this.element.style.width = `${this.width}px`;
@@ -24,16 +24,15 @@ class Player {
 	move() {
 		this.left += this.directionX;
 		this.top += this.directionY;
-
-		if (this.left < 10) {
-			this.left = 10;
+		if (this.left < 0) {
+			this.left = 0;
 		}
-		if (this.top < 10) {
-			this.top = 10;
+		if (this.top < 0) {
+			this.top = 0;
 		}
 		// handles right hand side
-		if (this.left > this.gameScreen.offsetWidth - this.width - 50) {
-			this.left = this.gameScreen.offsetWidth - this.width - 50;
+		if (this.left > this.gameScreen.offsetWidth - this.width - 10) {
+			this.left = this.gameScreen.offsetWidth - this.width - 10;
 		}
 
 		// handles bottom side

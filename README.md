@@ -22,7 +22,6 @@ Space Race is an exciting game where players take control of a spaceship and nav
 - Sound effects and background music
 - Different spaceship models to choose from
 - Special abilities for the player's spaceship
-- Bonus challenges for extra points
 
 ## Data Structure
 
@@ -34,15 +33,14 @@ Space Race is an exciting game where players take control of a spaceship and nav
      - `start`: Starts the game and sets up initial conditions.
      - `update`: Updates the game state every frame.
      - `handleInput`: Handles keyboard input from the player.
-     - `checkCollisions`: Checks for collisions between the player's spaceship and obstacles.
+     - `didCollide`: Checks for collisions between the player's spaceship and obstacles.
      - `increaseScore`: Increases the player's score.
      - `gameOver`: Ends the game and displays the final score.
 
 2. **Player**: Represents the player's spaceship.
 
    - Methods:
-     - `moveUp`: Moves the spaceship up.
-     - `moveDown`: Moves the spaceship down.
+     - `move`: Moves the spaceship around.
 
 3. **Obstacle**: Represents an obstacle that the player must evade.
    - Properties:
@@ -52,19 +50,16 @@ Space Race is an exciting game where players take control of a spaceship and nav
 
 ### States and State Transitions
 
-- **Main Menu**: The initial state of the game where the player can start or quit the game.
+- **Gamestart**: The initial state of the game where the player can start the game.
 
   - Transition: On pressing the "Start" button, the game transitions to the **Gameplay** state.
-  - Transition: On pressing the "Quit" button, the game exits.
 
 - **Gameplay**: The main state where the player controls the spaceship and evades obstacles.
 
   - Transition: On collision with an obstacle, the game transitions to the **Game Over** state.
-  - Transition: On pressing the "Restart" button, the game transitions to the **Gameplay** state.
 
 - **Game Over**: The state displayed when the game ends.
-  - Transition: On pressing the "Restart" button, the game transitions to the **Gameplay** state.
-  - Transition: On pressing the "Quit" button, the game returns to the **Main Menu** state.
+  - Transition: On pressing the "Restart" button, the game transitions to the **Gamestart** state.
 
 ## Tasks
 
