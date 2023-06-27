@@ -1,0 +1,85 @@
+# Space Race
+
+[Click here to play the deployed game](#)
+
+## Description
+
+Space Race is an exciting game where players take control of a spaceship and navigate through a treacherous space environment, evading obstacles to achieve the highest score possible. The game offers a fast-paced and challenging experience, testing the player's reflexes and agility as they maneuver through a never-ending space race.
+
+## MVP (Minimum Viable Product)
+
+- Player spaceship controlled by keyboard input
+- Obstacles that the player must evade
+- Score tracking
+- Game over condition
+- Restart functionality
+
+## Backlog
+
+- Power-ups to enhance the player's spaceship
+- Multiple levels with varying difficulty
+- Leaderboards to compare scores with other players
+- Sound effects and background music
+- Different spaceship models to choose from
+- Special abilities for the player's spaceship
+- Bonus challenges for extra points
+
+## Data Structure
+
+### Classes
+
+1. **Game**: Manages the overall game state, initializes game objects, and handles game logic.
+
+   - Methods:
+     - `start`: Starts the game and sets up initial conditions.
+     - `update`: Updates the game state every frame.
+     - `handleInput`: Handles keyboard input from the player.
+     - `checkCollisions`: Checks for collisions between the player's spaceship and obstacles.
+     - `increaseScore`: Increases the player's score.
+     - `gameOver`: Ends the game and displays the final score.
+
+2. **Player**: Represents the player's spaceship.
+
+   - Methods:
+     - `moveUp`: Moves the spaceship up.
+     - `moveDown`: Moves the spaceship down.
+
+3. **Obstacle**: Represents an obstacle that the player must evade.
+   - Properties:
+     - `position`: The position of the obstacle.
+   - Methods:
+     - `update`: Updates the obstacle's position.
+
+### States and State Transitions
+
+- **Main Menu**: The initial state of the game where the player can start or quit the game.
+
+  - Transition: On pressing the "Start" button, the game transitions to the **Gameplay** state.
+  - Transition: On pressing the "Quit" button, the game exits.
+
+- **Gameplay**: The main state where the player controls the spaceship and evades obstacles.
+
+  - Transition: On collision with an obstacle, the game transitions to the **Game Over** state.
+  - Transition: On pressing the "Restart" button, the game transitions to the **Gameplay** state.
+
+- **Game Over**: The state displayed when the game ends.
+  - Transition: On pressing the "Restart" button, the game transitions to the **Gameplay** state.
+  - Transition: On pressing the "Quit" button, the game returns to the **Main Menu** state.
+
+## Tasks
+
+1. Set up project structure and basic game loop
+2. Implement player spaceship movement
+3. Generate and display obstacles
+4. Implement collision detection
+5. Track and display player score
+6. Implement game over condition and restart functionality
+7. Refine gameplay mechanics and user interface
+8. Implement additional features from the backlog
+
+## Links
+
+- [Trello Link](#)
+- [Slides Link](#)
+- [Github Repository Link](#)
+- [Deployment Link](#)

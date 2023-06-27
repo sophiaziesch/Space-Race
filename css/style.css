@@ -1,0 +1,246 @@
+/* Importing Google Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Krona+One&display=swap");
+
+/* CSS RESET */
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol,
+ul {
+	list-style: none;
+}
+blockquote,
+q {
+	quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+	content: "";
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* MAIN CSS */
+
+* {
+	font-family: "Krona One", "Helvetica", sans-serif;
+}
+body {
+	background-color: black;
+	font-size: 16px;
+	color: white;
+	text-align: center;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+h1 {
+	font-size: 6rem;
+	letter-spacing: -0.6rem;
+	color: #66ffd1;
+	line-height: 8rem;
+}
+
+#game-intro,
+#game-end {
+	width: 100vw;
+}
+
+.header {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 3rem;
+	height: 300px;
+	padding: 50px 20px;
+	margin: 0 auto;
+}
+
+.planet-small {
+	height: auto;
+	width: 160px;
+}
+
+#start-button {
+	background-color: #a276ff;
+	color: white;
+	border: none;
+	border-radius: 2rem;
+	font-size: 4rem;
+	letter-spacing: -0.5rem;
+	padding: 20px 110px;
+}
+
+#game-intro p,
+#game-end p {
+	padding: 50px 20px;
+	width: 80vw;
+	margin: 0 auto;
+	line-height: 2rem;
+	align-self: center;
+}
+
+#game-intro h1,
+#game-end h1 {
+	text-align: right;
+}
+
+#game-container {
+	display: none;
+	width: 100vw;
+	margin: 0 auto;
+}
+
+#flex-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+#game-screen {
+	display: block;
+	align-content: center;
+	overflow: hidden;
+	position: relative;
+	background-image: url(../img/milkyway.jpeg);
+	background-size: cover;
+	border: solid 5px #a276ff;
+}
+
+#game-screen-info {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	text-align: left;
+	margin-left: 20px;
+}
+
+#game-screen-info p {
+	line-height: 3.5rem;
+	font-size: 2.5rem;
+	letter-spacing: -0.3rem;
+}
+
+.planet-big {
+	width: 250px;
+	height: auto;
+	padding: 20px 0;
+}
+
+#game-end {
+	display: none;
+}
