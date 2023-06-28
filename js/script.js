@@ -1,6 +1,6 @@
 window.addEventListener("load", () => {
 	const startButton = document.getElementById("start-button");
-	const restartButton = document.getElementById("restart-button");
+	const restartButtons = document.querySelectorAll(".restart-buttons");
 	let game;
 
 	function startGame() {
@@ -62,8 +62,9 @@ window.addEventListener("load", () => {
 	startButton.addEventListener("click", function () {
 		startGame();
 	});
-
-	restartButton.addEventListener("click", () => {
-		location.reload();
+	restartButtons.forEach((restartButton) => {
+		restartButton.addEventListener("click", () => {
+			location.reload();
+		});
 	});
 });

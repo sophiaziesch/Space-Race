@@ -4,6 +4,7 @@ class Game {
 		this.gameScreen = document.getElementById("game-screen");
 		this.gameEndScreen = document.getElementById("game-end");
 		this.gameContainer = document.getElementById("game-container");
+		this.gameWonScreen = document.getElementById("game-won");
 		this.height = 800;
 		this.width = 600;
 		this.player = new Player(this.gameScreen);
@@ -33,6 +34,9 @@ class Game {
 		console.log(this.level);
 		if (this.animateId % this.obstacleFrequency === 0) {
 			this.obstacles.push(new Obstacle(this.gameScreen, this.obstacleSpeed));
+		}
+		if (this.obstacleFrequency <= 0) {
+			this.wonGame();
 		}
 		if (this.isGameOver) {
 			this.endGame();
@@ -71,7 +75,7 @@ class Game {
 	increaseLevel() {
 		this.level += 1;
 		this.obstacleSpeed += 3;
-		this.obstacleFrequency -= 100;
+		this.obstacleFrequency -= 20;
 
 		this.obstacles.forEach((obstacle) => {
 			obstacle.setSpeed(this.obstacleSpeed);
@@ -95,5 +99,16 @@ class Game {
 		this.gameScreen.style.display = "none";
 		// Show end game screen
 		this.gameEndScreen.style.display = "block";
+	}
+
+	wonGame() {
+		this.player.element.remove();
+		this.obstacles.forEach((obstacle) => obstacle.element.remove());
+
+		// Hide game screen
+		this.gameContainer.style.display = "none";
+		this.gameScreen.style.display = "none";
+		// Show end game screen
+		this.gameWonScreen.style.display = "block";
 	}
 }

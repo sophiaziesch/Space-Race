@@ -156,7 +156,8 @@ h1 {
 }
 
 #game-intro,
-#game-end {
+#game-end,
+#game-won {
 	width: 100vw;
 }
 
@@ -176,7 +177,7 @@ h1 {
 }
 
 #start-button,
-#restart-button {
+.restart-buttons {
 	background-color: #a276ff;
 	color: white;
 	border: none;
@@ -198,7 +199,8 @@ h1 {
 }
 
 #game-intro p,
-#game-end p {
+#game-end p,
+#game-won p {
 	padding: 100px 20px;
 	width: 80vw;
 	margin: 0 auto;
@@ -208,7 +210,8 @@ h1 {
 }
 
 #game-intro h1,
-#game-end h1 {
+#game-end h1,
+#game-won h1 {
 	text-align: right;
 }
 
@@ -254,6 +257,7 @@ h1 {
 	padding: 20px 0;
 }
 
-#game-end {
+#game-end,
+#game-won {
 	display: none;
 }
