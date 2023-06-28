@@ -180,22 +180,25 @@ h1 {
 .restart-buttons {
 	background-color: #a276ff;
 	color: white;
+	width: 400px;
 	border: none;
 	border-radius: 2rem;
-	font-size: 4rem;
-	letter-spacing: -0.5rem;
-	padding: 20px 110px;
+	font-size: 3rem;
+	letter-spacing: -0.4rem;
+	padding: 10px 50px;
 	margin: 20px;
 }
 
 .audio-buttons {
 	background-color: #66ffd1;
 	color: white;
+	width: 400px;
 	border: none;
-	border-radius: 1rem;
-	font-size: 1.5rem;
-	letter-spacing: -0.2rem;
-	padding: 20px 50px;
+	border-radius: 2rem;
+	font-size: 3rem;
+	letter-spacing: -0.4rem;
+	padding: 10px 50px;
+	margin: 20px;
 }
 
 #game-intro p,
@@ -259,13 +262,13 @@ h1 {
 }
 
 #game-screen-info p {
-	line-height: 3.5rem;
-	font-size: 2.5rem;
+	line-height: 3rem;
+	font-size: 2rem;
 	letter-spacing: -0.3rem;
 }
 
 .planet-big {
-	width: 250px;
+	width: 200px;
 	height: auto;
 	padding: 20px 0;
 }

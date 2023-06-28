@@ -1,4 +1,4 @@
-class Obstacle {
+class Dog {
 	constructor(gameScreen, speed) {
 		this.gameScreen = gameScreen;
 		this.left = Math.floor(Math.random() * 520);
@@ -7,7 +7,7 @@ class Obstacle {
 		this.height = 150;
 		this.speed = speed;
 		this.element = document.createElement("img");
-		this.element.src = "./img/comet.png";
+		this.element.src = "./img/dog.png";
 		this.element.style.position = "absolute";
 		this.element.style.width = `${this.width}px`;
 		this.element.style.height = `${this.height}px`;

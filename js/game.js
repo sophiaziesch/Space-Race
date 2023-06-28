@@ -9,9 +9,10 @@ class Game {
 		this.width = 600;
 		this.player = new Player(this.gameScreen);
 		this.obstacles = [];
+		this.dogs = [];
 		this.isGameOver = false;
 		this.score = 0;
-		this.lives = 3;
+		this.lives = 5;
 		this.level = 0;
 		this.animateId;
 		this.obstacleFrequency = 200;
@@ -35,6 +36,9 @@ class Game {
 		if (this.animateId % this.obstacleFrequency === 0) {
 			this.obstacles.push(new Obstacle(this.gameScreen, this.obstacleSpeed));
 		}
+		if (this.animateId % 500 === 0) {
+			this.dogs.push(new Dog(this.gameScreen, this.obstacleSpeed));
+		}
 		if (this.obstacleFrequency <= 0) {
 			this.wonGame();
 		}
@@ -47,6 +51,7 @@ class Game {
 
 	update() {
 		this.player.move();
+
 		const obstaclesToKeep = [];
 		this.obstacles.forEach((obstacle) => {
 			obstacle.move();
@@ -63,9 +68,26 @@ class Game {
 			}
 		});
 
+		const dogsToKeep = [];
+		this.dogs.forEach((dog) => {
+			dog.move();
+			if (this.player.didCollide(dog)) {
+				dog.element.remove();
+				this.score += 5;
+			} else if (dog.top > this.gameScreen.offsetHeight) {
+				this.lives -= 1;
+				if (this.score > 0 && this.score % 5 === 0) {
+					this.increaseLevel();
+				}
+			} else {
+				dogsToKeep.push(dog);
+			}
+		});
+
 		document.getElementById("score").innerText = this.score;
 		document.getElementById("lives").innerText = this.lives;
 		this.obstacles = obstaclesToKeep;
+		this.dogs = dogsToKeep;
 
 		if (this.lives <= 0) {
 			this.isGameOver = true;
@@ -93,6 +115,7 @@ class Game {
 	endGame() {
 		this.player.element.remove();
 		this.obstacles.forEach((obstacle) => obstacle.element.remove());
+		this.dogs.forEach((dog) => dog.element.remove());
 
 		// Hide game screen
 		this.gameContainer.style.display = "none";
@@ -104,6 +127,7 @@ class Game {
 	wonGame() {
 		this.player.element.remove();
 		this.obstacles.forEach((obstacle) => obstacle.element.remove());
+		this.dogs.forEach((dog) => dog.element.remove());
 
 		// Hide game screen
 		this.gameContainer.style.display = "none";
