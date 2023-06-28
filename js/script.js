@@ -19,16 +19,16 @@ window.addEventListener("load", () => {
 				// Update player's directionX and directionY based on the key pressed
 				switch (key) {
 					case "ArrowLeft":
-						game.player.directionX = -3;
+						game.player.directionX = -4;
 						break;
 					case "ArrowUp":
-						game.player.directionY = -3;
+						game.player.directionY = -4;
 						break;
 					case "ArrowRight":
-						game.player.directionX = 3;
+						game.player.directionX = 4;
 						break;
 					case "ArrowDown":
-						game.player.directionY = 3;
+						game.player.directionY = 4;
 						break;
 				}
 				console.log(game.player.directionX, game.player.directionY);

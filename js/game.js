@@ -13,7 +13,7 @@ class Game {
 		this.isGameOver = false;
 		this.score = 0;
 		this.lives = 5;
-		this.level = 0;
+		this.level = 1;
 		this.animateId;
 		this.obstacleFrequency = 200;
 		this.obstacleSpeed = 3;
@@ -58,11 +58,11 @@ class Game {
 			if (this.player.didCollide(obstacle)) {
 				obstacle.element.remove();
 				this.lives -= 1;
-			} else if (obstacle.top > this.gameScreen.offsetHeight) {
-				this.score += 0;
-				if (this.score > 0 && this.score % 5 === 0) {
+				/* } else if (obstacle.top > this.gameScreen.offsetHeight) {
+				this.score += 0; */
+				/* if (this.score > 0 && this.score % 5 === 0) {
 					this.increaseLevel();
-				}
+				} */
 			} else {
 				obstaclesToKeep.push(obstacle);
 			}
@@ -74,11 +74,11 @@ class Game {
 			if (this.player.didCollide(dog)) {
 				dog.element.remove();
 				this.score += 1;
-			} else if (dog.top > this.gameScreen.offsetHeight) {
-				this.lives -= 1;
 				if (this.score > 0 && this.score % 5 === 0) {
 					this.increaseLevel();
 				}
+			} else if (dog.top > this.gameScreen.offsetHeight) {
+				this.lives -= 1;
 			} else {
 				dogsToKeep.push(dog);
 			}

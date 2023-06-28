@@ -2,14 +2,14 @@ class Player {
 	constructor(gameScreen) {
 		this.gameScreen = gameScreen;
 		this.width = 150;
-		this.height = 150;
+		this.height = 100;
 		this.top = 480;
 		this.left = 180;
 		this.directionX = 0;
 		this.directionY = 0;
 		this.element = document.createElement("img");
 
-		this.element.src = "./img/ufo.png";
+		this.element.src = "./img/ufo-2.png";
 		this.element.style.position = "absolute";
 
 		this.element.style.width = `${this.width}px`;
