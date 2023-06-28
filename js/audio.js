@@ -1,5 +1,5 @@
 const audioButtons = document.querySelectorAll(".audio-buttons");
-const audioElement = new Audio("../audio/space-dance.wav");
+const audioElement = new Audio("./audio/space-dance.wav");
 audioElement.loop = true;
 audioElement.volume = 0.1;
 let isPlaying = false;
