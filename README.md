@@ -12,16 +12,18 @@ Space Race is an exciting game where players take control of a spaceship and nav
 - Obstacles that the player must evade
 - Score tracking
 - Game over condition
+- Win condition
 - Restart functionality
 
 ## Backlog
 
-- Power-ups to enhance the player's spaceship
 - Multiple levels with varying difficulty
-- Leaderboards to compare scores with other players
 - Sound effects and background music
+- Different obstacles
 - Different spaceship models to choose from
 - Special abilities for the player's spaceship
+- Power-ups to enhance the player's spaceship
+- Leaderboards to compare scores with other players
 
 ## Data Structure
 
@@ -31,11 +33,13 @@ Space Race is an exciting game where players take control of a spaceship and nav
 
    - Methods:
      - `start`: Starts the game and sets up initial conditions.
+     - `gameLoop`: Defines main game loop.
      - `update`: Updates the game state every frame.
-     - `handleInput`: Handles keyboard input from the player.
+     - `increaseLevel`: Increases difficulty of the game after a certain score.
      - `didCollide`: Checks for collisions between the player's spaceship and obstacles.
      - `increaseScore`: Increases the player's score.
-     - `gameOver`: Ends the game and displays the final score.
+     - `endGame`: Ends the game and offers to restart the game.
+     - `wonGame`: Ends game when win condition is met and offers to restart the game.
 
 2. **Player**: Represents the player's spaceship.
 
