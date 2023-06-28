@@ -59,7 +59,7 @@ class Game {
 				obstacle.element.remove();
 				this.lives -= 1;
 			} else if (obstacle.top > this.gameScreen.offsetHeight) {
-				this.score += 1;
+				this.score += 0;
 				if (this.score > 0 && this.score % 5 === 0) {
 					this.increaseLevel();
 				}
@@ -73,7 +73,7 @@ class Game {
 			dog.move();
 			if (this.player.didCollide(dog)) {
 				dog.element.remove();
-				this.score += 5;
+				this.score += 1;
 			} else if (dog.top > this.gameScreen.offsetHeight) {
 				this.lives -= 1;
 				if (this.score > 0 && this.score % 5 === 0) {
