@@ -2,9 +2,6 @@ window.addEventListener("load", () => {
 	const startButton = document.getElementById("start-button");
 	const restartButton = document.getElementById("restart-button");
 	let game;
-	const audioButton = document.getElementById("audio-button");
-	const audioElement = new Audio("/audio/space-dance.wav");
-	audioElement.loop = true;
 
 	function startGame() {
 		console.log("start game");
@@ -68,9 +65,5 @@ window.addEventListener("load", () => {
 
 	restartButton.addEventListener("click", () => {
 		location.reload();
-	});
-
-	audioButton.addEventListener("click", function () {
-		audioElement.play();
 	});
 });

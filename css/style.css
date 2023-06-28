@@ -187,7 +187,7 @@ h1 {
 	margin: 20px;
 }
 
-#audio-button {
+.audio-buttons {
 	background-color: #66ffd1;
 	color: white;
 	border: none;
