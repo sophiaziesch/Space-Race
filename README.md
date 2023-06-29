@@ -101,5 +101,5 @@ Space Rescue is an exciting game where the player takes control of a spaceship a
 
 ## Links
 
-- [Github Repository Link](#https://github.com/sophiaziesch/Space-Race#)
-- [Deployment Link](#https://sophiaziesch.github.io/Space-Race/)
+- [Github Repository Link](https://github.com/sophiaziesch/Space-Race#)
+- [Deployment Link](https://sophiaziesch.github.io/Space-Race/)
