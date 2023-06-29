@@ -1,6 +1,6 @@
 # Space Rescue
 
-[Click here to play the deployed game](#https://sophiaziesch.github.io/Space-Race/)
+[Click here to play the deployed game](https://sophiaziesch.github.io/Space-Race/)
 
 ## Description
 
@@ -101,7 +101,5 @@ Space Rescue is an exciting game where the player takes control of a spaceship a
 
 ## Links
 
-- [Trello Link](#)
-- [Slides Link](#)
-- [Github Repository Link](#)
-- [Deployment Link](#)
+- [Github Repository Link](#https://github.com/sophiaziesch/Space-Race#)
+- [Deployment Link](#https://sophiaziesch.github.io/Space-Race/)
