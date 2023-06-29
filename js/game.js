@@ -32,7 +32,6 @@ class Game {
 
 	gameLoop() {
 		this.update();
-		console.log(this.level);
 		if (this.animateId % this.obstacleFrequency === 0) {
 			this.obstacles.push(new Obstacle(this.gameScreen, this.obstacleSpeed));
 		}
@@ -58,11 +57,6 @@ class Game {
 			if (this.player.didCollide(obstacle)) {
 				obstacle.element.remove();
 				this.lives -= 1;
-				/* } else if (obstacle.top > this.gameScreen.offsetHeight) {
-				this.score += 0; */
-				/* if (this.score > 0 && this.score % 5 === 0) {
-					this.increaseLevel();
-				} */
 			} else {
 				obstaclesToKeep.push(obstacle);
 			}
@@ -102,13 +96,6 @@ class Game {
 		this.obstacles.forEach((obstacle) => {
 			obstacle.setSpeed(this.obstacleSpeed);
 		});
-
-		/* clearInterval(this.obstacleInterval);
-		this.obstacleInterval = setInterval(() => {
-			this.obstacles.push(new Obstacle(this.gameScreen));
-		}, obstacleFrequency); */
-
-		// Display the updated level
 		document.getElementById("level").innerText = this.level;
 	}
 
@@ -117,10 +104,9 @@ class Game {
 		this.obstacles.forEach((obstacle) => obstacle.element.remove());
 		this.dogs.forEach((dog) => dog.element.remove());
 
-		// Hide game screen
 		this.gameContainer.style.display = "none";
 		this.gameScreen.style.display = "none";
-		// Show end game screen
+
 		this.gameEndScreen.style.display = "block";
 	}
 
@@ -129,10 +115,9 @@ class Game {
 		this.obstacles.forEach((obstacle) => obstacle.element.remove());
 		this.dogs.forEach((dog) => dog.element.remove());
 
-		// Hide game screen
 		this.gameContainer.style.display = "none";
 		this.gameScreen.style.display = "none";
-		// Show end game screen
+
 		this.gameWonScreen.style.display = "block";
 	}
 }

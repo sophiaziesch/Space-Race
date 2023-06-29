@@ -30,12 +30,11 @@ class Player {
 		if (this.top < 0) {
 			this.top = 0;
 		}
-		// handles right hand side
+
 		if (this.left > this.gameScreen.offsetWidth - this.width - 10) {
 			this.left = this.gameScreen.offsetWidth - this.width - 10;
 		}
 
-		// handles bottom side
 		if (this.top > this.gameScreen.offsetHeight - this.height - 10) {
 			this.top = this.gameScreen.offsetHeight - this.height - 10;
 		}
